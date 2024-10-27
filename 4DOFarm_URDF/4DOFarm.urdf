@@ -12,7 +12,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/collision/base_link.stl"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/collision/base_link.stl"/>
       </geometry>
     </collision>
   </link>
@@ -21,13 +21,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.043 -0.056 0"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/visualization/arm_link_0.dae"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Shoulder-Assembly v26.stl"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.043 -0.056 0"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/collision/arm_link_0.stl"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Shoulder-Simplified_for_URDF v1.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -40,13 +40,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/visualization/arm_link_1.dae"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Long_arm-Assembly v32.stl"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/collision/arm_link_1.stl"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Long_Arm-Simplified_for_URDF v1.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -59,13 +59,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.063 0.000654 -0.040895"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/visualization/arm_link_2.dae"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Short_Arm-Assembly v8.stl"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.063 0.000654 -0.040895"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/collision/arm_link_2.stl"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Short_Arm-Simplified_for_URDF v2.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -78,13 +78,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="-0.038106 0.015875 0.14921"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/visualization/arm_gripper.dae"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Gripper-Simplified_for_URDF v1.stl"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.038106 0.015875 0.14921"/>
       <geometry>
-        <mesh filename="package://rover_arm_urdf/urdf/collision/arm_gripper.stl"/>
+        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Gripper-Simplified_for_URDF v1.stl"/>
       </geometry>
     </collision>
     <inertial>
