@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(Moveit_Config)
+project(robotic_arm)
 
 find_package(ament_cmake REQUIRED)
 
