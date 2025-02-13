@@ -1,33 +1,32 @@
-?xml version="1.0"?>
-<robot name="4DOFarm">
-
+<?xml version="1.0"?>
+<robot name="robotic_arm_6dof ">
   <!--DEFINING ROBOT LINKS IN ORDER FROM BASE TO HAND-->
   <link name="base_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Base-Assembly_Pulley v20.stl"/>
+        <mesh filename="package://arm_urdf/urdf/visualization/base_visual.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/collision/base_link.stl"/>
+        <mesh filename="package://arm_urdf/urdf/collision/base_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  
+
   <link name="arm_link_0">
     <visual>
       <origin rpy="0 0 0" xyz="-0.043 -0.056 0"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Shoulder-Assembly v26.stl"/>
+        <mesh filename="package://arm_urdf/urdf/visualization/shoulder_visual.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.043 -0.056 0"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Shoulder-Simplified_for_URDF v1.stl"/>
+        <mesh filename="package://arm_urdf/urdf/collision/shoulder_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -40,13 +39,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Long_arm-Assembly v32.stl"/>
+        <mesh filename="package://arm_urdf/urdf/visualization/long_arm_visual.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Long_Arm-Simplified_for_URDF v1.stl"/>
+        <mesh filename="package://arm_urdf/urdf/collision/long_arm_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -59,13 +58,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0.063 0.000654 -0.040895"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Short_Arm-Assembly v8.stl"/>
+        <mesh filename="package://arm_urdf/urdf/visualization/short_arm_visual.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0.063 0.000654 -0.040895"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Short_Arm-Simplified_for_URDF v2.stl"/>
+        <mesh filename="package://arm_urdf/urdf/collision/short_arm_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -74,17 +73,17 @@
     </inertial>
   </link>
 
-   <link name="arm_gripper">
+  <link name="arm_gripper">
     <visual>
       <origin rpy="0 0 0" xyz="-0.038106 0.015875 0.14921"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/visualization/4DOFarm-Gripper-Simplified_for_URDF v1.stl"/>
+        <mesh filename="package://arm_urdf/urdf/visualization/gripper_visual.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.038106 0.015875 0.14921"/>
       <geometry>
-        <mesh filename="package://4DOFarm_URDF/urdf/collision/4DOFarm-Gripper-Simplified_for_URDF v1.stl"/>
+        <mesh filename="package://arm_urdf/urdf/collision/gripper_visual.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
     <inertial>
@@ -93,12 +92,10 @@
     </inertial>
   </link>
 
-
-
   <joint name="base_joint" type="revolute">
     <parent link="base_link"/>
     <child link="arm_link_0"/>
-    <origin rpy="0 0 0" xyz="0 0.055 0.087245"/>
+    <origin rpy="0 0 0" xyz="0 0.0647 0.19525"/>
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="2.5"/>
   </joint>
@@ -106,7 +103,7 @@
   <joint name="shoulder_joint" type="revolute">
     <parent link="arm_link_0"/>
     <child link="arm_link_1"/>
-    <origin rpy="0 0 3.14159" xyz="0 0 0.151443"/>
+    <origin rpy="0 0 3.14159" xyz="0 0.1407 0"/>
     <axis xyz="1 0 0"/>
     <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="2.5"/>
   </joint>
@@ -114,7 +111,7 @@
   <joint name="elbow_pitch_joint" type="revolute">
     <parent link="arm_link_1"/>
     <child link="arm_link_2"/>
-    <origin rpy="0 0 0" xyz="0.05925 0 0.501983"/>
+    <origin rpy="0 0 0" xyz="0.05925 0 0.36646"/>
     <axis xyz="1 0 0"/>
     <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="2.5"/>
   </joint>
@@ -122,7 +119,7 @@
   <joint name="wrist_pitch_joint" type="revolute">
     <parent link="arm_link_2"/>
     <child link="arm_gripper"/>
-    <origin rpy="0 0 0" xyz="0.063 0.000654 0.059505"/>
+    <origin rpy="0 0 0" xyz="0.05325 0 0.24944"/>
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-3.141592653589793" upper="3.141592653589793" velocity="2.5"/>
   </joint>
